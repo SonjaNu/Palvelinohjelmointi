@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Student List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Welcome to the Haaga-Helia!</h1>
+	
+	<table>
+		
+		<tr th:each="student : ${students}"> <!--   : student on nimitys yhdelle listan oliolle (tässä voi olla mikä tahansa sana vaikka porkkana. Kyseessä on hyvä nimeämiskäytäntö) -->
+			<td th:text="${student.firstName}">firstName</td> <!-- voi käyttää student.getFirstName sijaan ilman gettiä eli student.firstName (tällöin attribuutin (firstName) kirjoitusasu on oltava täysin sama kuin student.java -luokassa -->
+			<td th:text="${student.lastName}">lastName</td>
+		</tr>
+	</table>
+
+	
+
+</body>
+</html>
